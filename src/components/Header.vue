@@ -1,19 +1,23 @@
 <template>
-    <header>
-        <img src="@/assets\photoProfil.jpg" alt="Photo de profil" class="img-thumbnail profile-photo">
-        <section>
-            <h1>Terzi Quentin <small class="text-muted">/ Développeur Web</small></h1>
-            <ul class="nav-icons">
-                <li><a href="#"><fa :icon="['far', 'circle-user']" class="fa-3x"/></a></li>
-                <li><a href="#"><fa :icon="['fas', 'list-check']" class="fa-3x"/></a></li>
-                <li><a href="#"><fa :icon="['fas', 'graduation-cap']" class="fa-3x"/></a></li>
-                <li><a href="#"><fa :icon="['fas', 'briefcase']" class="fa-3x"/></a></li>
-                <li><a href="#"><fa :icon="['far', 'folder']" class="fa-3x"/></a></li>
-                <li><a href="#"><fa :icon="['fab', 'dribbble']" class="fa-3x"/></a></li>
-                <li><a href="#"><fa :icon="['far', 'envelope']" class="fa-3x"/></a></li>
+    <div class="container">
+        <header class="text-black py-3">
+        <div class="d-flex align-items-center">
+            <img src="@/assets/photoProfil.jpg" alt="Photo de profil" class="img-thumbnail profile-photo">
+            <section>
+            <h1 class="mb-10">Terzi Quentin <small class="text-muted">/ Développeur Web</small></h1>
+            <ul class="nav-icons list-inline mt-3">
+                <li class="list-inline-item"><a href="#"><fa :icon="['far', 'circle-user']" class="fa-2x"></fa></a></li>
+                <li class="list-inline-item d-* d-sm-inline"><a href="#"><fa :icon="['fas', 'list-check']" class="fa-2x"></fa></a></li>
+                <li class="list-inline-item d-* d-md-inline"><a href="#"><fa :icon="['fas', 'graduation-cap']" class="fa-2x"></fa></a></li>
+                <li class="list-inline-item d-* d-lg-inline"><a href="#"><fa :icon="['fas', 'briefcase']" class="fa-2x"></fa></a></li>
+                <li class="list-inline-item d-* d-xl-inline"><a href="#"><fa :icon="['far', 'folder']" class="fa-2x"></fa></a></li>
+                <li class="list-inline-item d-* d-xl-inline"><a href="#"><fa :icon="['fab', 'dribbble']" class="fa-2x"></fa></a></li>
+                <li class="list-inline-item d-* d-xl-inline"><a href="#"><fa :icon="['far', 'envelope']" class="fa-2x"></fa></a></li>
             </ul>
-        </section>
-    </header>
+            </section>
+        </div>
+        </header>
+    </div>
 </template>
 
 <script>
@@ -24,20 +28,18 @@
 
 <style scoped>
     header {
-        background-color: #333;
-        height: 150px;
+        /* background-color: #333; */
+        /* height: 150px;
         max-height: 150px;
-        width: 60%;
+        width: 60%; */
         margin: 0 auto;
         display: flex;
-        flex-direction: row;
         justify-content: center;
         align-items: center;
-        color: #fff;
     }
     .profile-photo {
-        width: 80px; 
-        height: 80px; 
+        width: 100px; 
+        height: 120px; 
         border-radius: 50%;
         margin-right: 20px;
     }
@@ -47,7 +49,8 @@
         padding: 0;
         margin: 0;
         display: flex;
-        align-items: center;
+        justify-content: space-around;
+        /* align-items: center; */
     }
 
     .nav-icons li {
@@ -55,7 +58,7 @@
     }
 
     .nav-icons a {
-        color: #fff;
+        /* color: #fff; */
         text-decoration: none;
     }
 </style>
