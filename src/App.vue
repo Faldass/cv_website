@@ -1,9 +1,18 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-  </nav>
-  <router-view/>
+  <headerNav/>
+  <!-- HomeView -->
+  <!-- <router-view/> -->
+  <!-- footer -->
 </template>
+
+<script>
+  import headerNav from '@/components/Header.vue'
+  export default {
+    components:{
+      headerNav
+    }
+  }
+</script>
 
 <style>
 #app {
