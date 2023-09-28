@@ -1,5 +1,6 @@
 <template>
   <headerNav/>
+  <footerContact/>
   <!-- HomeView -->
   <!-- <router-view/> -->
   <!-- footer -->
@@ -7,9 +8,11 @@
 
 <script>
   import headerNav from '@/components/Header.vue'
+  import footerContact from '@/components/Footer.vue'
   export default {
     components:{
-      headerNav
+      headerNav,
+      footerContact
     }
   }
 </script>
