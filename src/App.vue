@@ -1,5 +1,6 @@
 <template>
   <headerNav/>
+  <diplomasValid/>
   <footerContact/>
   <!-- HomeView -->
   <!-- <router-view/> -->
@@ -9,10 +10,12 @@
 <script>
   import headerNav from '@/components/Header.vue'
   import footerContact from '@/components/Footer.vue'
+  import diplomasValid from '@/components/Diplomas.vue'
   export default {
     components:{
       headerNav,
-      footerContact
+      footerContact,
+      diplomasValid
     }
   }
 </script>
