@@ -4,21 +4,13 @@
             <h2><fa :icon="['fas', 'graduation-cap']"/> Diplômes</h2>
         </div>
         <div>
-            <article class="row border align-items-center">
-                <fa :icon="['fas', 'pencil']"  class="col fa-2x"/>
+            <article class="row border align-items-center" id="articleElement">
+                <fa :icon="['fas', 'pencil']" class="col fa-2x"></fa>
                 <p class="col-11 m-auto d-flex"><strong>Développeur Web et mobile Bac +2</strong> - ADRAR TOULOUSE - Juillet 2021 à Juillet 2022</p>
-                <aside class="col border">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore placeat rerum adipisci. Quasi dignissimos ad nisi amet, fugiat, quaerat, explicabo fuga incidunt illo quisquam numquam qui quam quis placeat quod!
-                </aside>
             </article>
-
-            <article class="row border align-items-center">
-                <fa :icon="['fas', 'pencil']"  class="col fa-2x"/>
-                <p class="col-11 m-auto d-flex"><strong>Développeur Web et mobile Bac +2</strong> - ADRAR TOULOUSE - Juillet 2021 à Juillet 2022</p>
-                <aside class="col border">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore placeat rerum adipisci. Quasi dignissimos ad nisi amet, fugiat, quaerat, explicabo fuga incidunt illo quisquam numquam qui quam quis placeat quod!
-                </aside>
-            </article>
+            <aside class="col border slide" id="asideElement">
+                <p class="py-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore placeat rerum adipisci. Quasi dignissimos ad nisi amet, fugiat, quaerat, explicabo fuga incidunt illo quisquam numquam qui quam quis placeat quod!</p>
+            </aside>
         </div>
     </section>
 </template>
@@ -27,9 +19,29 @@
     export default{
         name: 'diplomasValid'
     }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const articleElement = document.getElementById('articleElement');
+        const asideElement = document.getElementById('asideElement');
+
+        articleElement.addEventListener('click', function() {
+            if (asideElement.style.maxHeight) {
+                asideElement.style.maxHeight = null;
+            } else {
+                asideElement.style.maxHeight = asideElement.scrollHeight + "px";
+            }
+        });
+    });
+
 </script>
 
 <style scoped>
+.slide {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
 /* .section-titre {
     width: 100%;
     display: table;
