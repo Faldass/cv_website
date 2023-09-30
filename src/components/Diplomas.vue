@@ -1,62 +1,75 @@
 <template>
     <section class="container border">
-        <div class="section-titre border">
+        <div class="border">
             <h2><fa :icon="['fas', 'graduation-cap']"/> Diplômes</h2>
         </div>
-        <div>
-            <article class="row border align-items-center" id="articleElement">
+        <div 
+            v-for="(diploma, index) in diplomas" :key="index"
+        >
+            <article class="row border align-items-center" @click="toggleAside(index)">
                 <fa :icon="['fas', 'pencil']" class="col fa-2x"></fa>
-                <p class="col-11 m-auto d-flex"><strong>Développeur Web et mobile Bac +2</strong> - ADRAR TOULOUSE - Juillet 2021 à Juillet 2022</p>
+                <p class="col-11 m-auto d-flex">
+                    <strong>{{diploma.title}}</strong> - {{diploma.school}} - {{diploma.date}}
+                </p>
             </article>
-            <aside class="col border slide" id="asideElement">
-                <p class="py-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore placeat rerum adipisci. Quasi dignissimos ad nisi amet, fugiat, quaerat, explicabo fuga incidunt illo quisquam numquam qui quam quis placeat quod!</p>
+            <aside class="col border slide" :class="{ open: openIndex === index }">
+                <p class="py-4">{{ diploma.description }}</p>
             </aside>
         </div>
     </section>
 </template>
 
 <script>
-    export default{
-        name: 'diplomasValid'
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const articleElement = document.getElementById('articleElement');
-        const asideElement = document.getElementById('asideElement');
-
-        articleElement.addEventListener('click', function() {
-            if (asideElement.style.maxHeight) {
-                asideElement.style.maxHeight = null;
-            } else {
-                asideElement.style.maxHeight = asideElement.scrollHeight + "px";
+    export default {
+        name: 'diplomasValid',
+        data(){
+            return{
+                diplomas: [
+                    {
+                        title: "Développeur Web et mobile Bac+2",
+                        school: "ADRAR",
+                        date: "Juillet 2021 à Juillet 2022",
+                        description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore placeat rerum adipisci. Quasi dignissimos ad nisi amet, fugiat, quaerat, explicabo fuga incidunt illo quisquam numquam qui quam quis placeat quod!"
+                    },
+                    {
+                        title: "Bac pro SEN",
+                        school: "Lycée Eugène Montel",
+                        date: "Septembre 2012 à Juillet 2015",
+                        description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore placeat rerum adipisci. Quasi dignissimos ad nisi amet, fugiat, quaerat, explicabo fuga incidunt illo quisquam numquam qui quam quis placeat quod!"
+                    }
+                ],
+                openIndex: null
             }
-        });
-    });
-
+        },
+        methods: {
+            toggleAside(index) {
+                if (this.openIndex === index) {
+                    this.openIndex = null; // Ferme l'aside si l'article est déjà ouvert
+                } else {
+                    this.openIndex = index; // Ouvre l'aside de l'article cliqué
+                }
+            }
+        }
+    };
 </script>
 
 <style scoped>
-.slide {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-}
+    article {
+        cursor: pointer; 
+        transition: background-color 0.3s ease-in-out;
+    }
 
-/* .section-titre {
-    width: 100%;
-    display: table;
-    text-align: left;
-    margin-bottom: 40px;
-    position: relative;
-}
-.section-titre h2 {
-    z-index: 2;
-    font-size: 40px;
-    padding: 15px 0;
-    line-height: .65;
-    margin-bottom: 20px;
-    text-transform: capitalize;
-    font-weight: 700;
-    position: relative;
-} */
+    article:hover {
+        background-color: #f0f0f0; 
+    }
+
+    .slide {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    .open {
+        max-height: 200px; /* Réglez la hauteur maximale d'affichage */
+    }
 </style>
