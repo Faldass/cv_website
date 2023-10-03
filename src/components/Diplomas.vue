@@ -58,7 +58,10 @@
 
     /*Gère le slide qui affiche les infos diplome */
     article {
-        cursor: pointer; 
+        cursor: pointer;
+        background-color: #36393f;
+        min-height: 3rem;
+        line-height: 3rem;
         transition: background-color 0.3s ease-in-out;
         border-bottom: 1px solid #424242;
     }
