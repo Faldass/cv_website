@@ -4,15 +4,15 @@
             <img src="@/assets/photoProfil.jpg" alt="Photo de profil" class="img-thumbnail profile-photo">
             <section>
                 <h1 class="mb-10">Terzi Quentin <small class="text-muted">/ Développeur Web</small></h1>
-                <ul class="nav-icons list-inline mt-3">
-                    <li class="list-inline-item"><a href="#"><fa :icon="['far', 'circle-user']" class="fa-2x"/></a></li>
-                    <li class="list-inline-item d-* d-sm-inline"><a href="#"><fa :icon="['fas', 'list-check']" class="fa-2x"/></a></li>
-                    <li class="list-inline-item d-* d-md-inline"><a href="#"><fa :icon="['fas', 'graduation-cap']" class="fa-2x"/></a></li>
-                    <li class="list-inline-item d-* d-lg-inline"><a href="#"><fa :icon="['fas', 'briefcase']" class="fa-2x"/></a></li>
-                    <li class="list-inline-item d-* d-xl-inline"><a href="#"><fa :icon="['far', 'folder']" class="fa-2x"/></a></li>
-                    <li class="list-inline-item d-* d-xl-inline"><a href="#"><fa :icon="['fab', 'dribbble']" class="fa-2x"/></a></li>
-                    <li class="list-inline-item d-* d-xl-inline"><a href="#"><fa :icon="['far', 'envelope']" class="fa-2x"/></a></li>
-                </ul>
+                <nav class="nav-icons list-inline mt-3">
+                    <router-link :to="{ name: 'home', params: { sectionName: 'profil' } }"><fa :icon="['far', 'circle-user']" class="fa-2x"/></router-link>
+                    <router-link :to="{ name: 'home', params: { sectionName: 'competences' } }"><fa :icon="['fas', 'list-check']" class="fa-2x"/></router-link>
+                    <router-link :to="{ name: 'home', params: { sectionName: 'diplomes' } }"><fa :icon="['fas', 'graduation-cap']" class="fa-2x"/></router-link>
+                    <router-link :to="{ name: 'home', params: { sectionName: 'experiences' } }"><fa :icon="['fas', 'briefcase']" class="fa-2x"/></router-link>
+                    <router-link :to="{ name: 'home', params: { sectionName: 'portfolio' } }"><fa :icon="['far', 'folder']" class="fa-2x"/></router-link>
+                    <router-link :to="{ name: 'home', params: { sectionName: 'loisirs' } }"><fa :icon="['fab', 'dribbble']" class="fa-2x"/></router-link>
+                    <router-link :to="{ name: 'home', params: { sectionName: 'contact' } }"><fa :icon="['far', 'envelope']" class="fa-2x"/></router-link>
+                </nav>
             </section>
         </div>
     </header>

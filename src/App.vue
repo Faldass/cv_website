@@ -1,23 +1,21 @@
 <template>
-  <headerNav/>
-  <diplomasValid/>
-  <footerContact/>
-  <!-- HomeView -->
-  <!-- <router-view/> -->
-  <!-- footer -->
+    <headerNav/>
+    <!-- <diplomasValid/> -->
+    <!-- HomeView -->
+    <router-view/>
+    <footerContact/>
 </template>
 
 <script>
-  import headerNav from '@/components/Header.vue'
-  import footerContact from '@/components/Footer.vue'
-  import diplomasValid from '@/components/Diplomas.vue'
-  export default {
-    components:{
-      headerNav,
-      footerContact,
-      diplomasValid
+    import headerNav from '@/components/Header.vue'
+    import footerContact from '@/components/Footer.vue'
+
+    export default {
+        components:{
+            headerNav,
+            footerContact,
+        }
     }
-  }
 </script>
 
 <style>
