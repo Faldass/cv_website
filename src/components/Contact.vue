@@ -4,20 +4,20 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="nom">Nom</label>
+                        <label for="nom">Nom *</label>
                         <input type="text" class="form-control" id="nom" placeholder="Votre nom" required />
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="prenom">Prénom</label>
+                        <label for="prenom">Prénom *</label>
                         <input type="text" class="form-control" id="prenom" placeholder="Votre prénom" required />
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 form-group">
-                    <label for="email">Email</label>
+                    <label for="email">Email *</label>
                     <input type="email" class="form-control" id="email" placeholder="Votre adresse email" required />
                 </div>
                 <div class="col-md-6 form-group">
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="message">Message</label>
+                <label for="message">Message *</label>
                 <textarea class="form-control" id="message" rows="5" placeholder="Votre message" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Envoyer</button>
