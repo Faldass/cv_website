@@ -15,13 +15,15 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Votre adresse email" required />
-            </div>
-            <div class="form-group">
-                <label for="objet">Objet</label>
-                <input type="text" class="form-control" id="objet" placeholder="L'objet de votre message"/>
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Votre adresse email" required />
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="objet">Objet</label>
+                    <input type="text" class="form-control" id="objet" placeholder="L'objet de votre message"/>
+                </div>
             </div>
             <div class="form-group">
                 <label for="message">Message</label>
