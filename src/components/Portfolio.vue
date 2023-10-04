@@ -7,6 +7,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ project.title }}</h5>
                         <p class="card-text">{{ project.description }}</p>
+                        <button class="btn btn-link" @click="showProjectDetails(index)">Voir plus</button>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
@@ -27,37 +28,70 @@
             </div>
         </div>
     </div>
+
+    <div class="modal" tabindex="-1" role="dialog" :class="{ 'show': showModal }">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">{{ selectedProject ? selectedProject.title : '' }}</h5>
+          <button type="button" class="close" @click="closeProjectDetails">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Affichez ici les détails du projet -->
+          <p>{{ selectedProject ? selectedProject.description : '' }}</p>
+          <!-- Ajoutez d'autres détails ici -->
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" @click="closeProjectDetails">Fermer</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
 </template>
   
 <script>
-export default {
-    name: "portfolioProject",
-    data() {
-        return {
-            projects: [
-                {
-                    title: "Projet 1",
-                    description: "Description du projet 1.",
-                    technologies: ["HTML", "CSS", "JavaScript"],
-                    liveDemo: "",
-                    githubRepo: "https://github.com/yourusername/project1",
-                    image: require('@/assets/img/basketball.png'),
-                    resource: "",
-                },
-                {
-                    title: "Projet 2",
-                    description: "Description du projet 2.",
-                    technologies: ["React", "Node.js", "MongoDB"],
-                    liveDemo: "https://example.com/demo2",
-                    githubRepo: "https://github.com/yourusername/project2",
-                    image: require('@/assets/img/cartomagie.jpg'),
-                    resource: "",
-                },
-                // Ajoutez d'autres projets ici...
-            ],
-        };
-    },
-};
+    export default {
+        name: "portfolioProject",
+        data() {
+            return {
+                projects: [
+                    {
+                        title: "Projet 1",
+                        description: "Description du projet 1.",
+                        technologies: ["HTML", "CSS", "JavaScript"],
+                        liveDemo: "",
+                        githubRepo: "https://github.com/yourusername/project1",
+                        image: require('@/assets/img/basketball.png'),
+                        resource: "",
+                    },
+                    {
+                        title: "Projet 2",
+                        description: "Description du projet 2.",
+                        technologies: ["React", "Node.js", "MongoDB"],
+                        liveDemo: "https://example.com/demo2",
+                        githubRepo: "https://github.com/yourusername/project2",
+                        image: require('@/assets/img/cartomagie.jpg'),
+                        resource: "",
+                    },
+                    // Ajoutez d'autres projets ici...
+                ],
+                selectedProject: null, // Stockez le projet sélectionné ici
+                showModal: false, // Contrôle l'affichage de la modale
+            };
+        },
+        methods: {
+            showProjectDetails(index) {
+                this.selectedProject = this.projects[index];
+                this.showModal = true;
+            },
+            closeProjectDetails() {
+                this.selectedProject = null;
+                this.showModal = false;
+            },
+        },
+    };
 </script>
   
 <style scoped>
@@ -111,5 +145,60 @@ export default {
 .row {
     justify-content: center;
 }
+.modal {
+  display: none;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  position: fixed;
+  z-index: 1050;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+}
+
+.modal-header {
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+/* .modal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-top: 1px solid #e9ecef;
+} */
 </style>
   
