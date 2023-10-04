@@ -1,7 +1,7 @@
 <template>
     <header class="container text-black py-3">
         <div class="d-flex align-items-center">
-            <img src="@/assets/photoProfil.jpg" alt="Photo de profil" class="img-thumbnail profile-photo">
+            <img src="@/assets/img/photoProfil.jpg" alt="Photo de profil" class="img-thumbnail profile-photo">
             <section>
                 <h1 class="mb-10">Terzi Quentin <small class="text-muted">/ Développeur Web</small></h1>
                 <nav class="nav-icons list-inline mt-3">
