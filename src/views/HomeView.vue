@@ -21,6 +21,7 @@
     import accordionDiplomas from '@/components/Accordion.vue';
     import pictureFrame from '@/components/Hobbies.vue';
     import contactMail from '@/components/Contact.vue';
+    import portfolioProject from '@/components/Portfolio.vue';
 // @ is an alias to /src
     export default {
         name: 'HomeView',
@@ -30,6 +31,7 @@
             accordionDiplomas,
             pictureFrame,
             contactMail,
+            portfolioProject,
         },
         computed: {
             section() {
@@ -65,6 +67,7 @@
                     {
                         title: "portfolio",
                         icon: ['far', 'folder'],
+                        component: 'portfolioProject',
                     },
                     {
                         title: "loisirs",

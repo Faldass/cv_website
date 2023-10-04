@@ -56,12 +56,12 @@
                         description: "En club",
                         showInfo: false,
                     },
-                    {
-                        title: "Hypnose",
-                        img: "hypnose.jpg",
-                        description: "En club",
-                        showInfo: false,
-                    },
+                    // {
+                    //     title: "Hypnose",
+                    //     img: "hypnose.jpg",
+                    //     description: "En club",
+                    //     showInfo: false,
+                    // },
                     {
                         title: "Méditation",
                         img: "meditation.jpg",
