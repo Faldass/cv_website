@@ -19,7 +19,8 @@
 
 <script>
     import accordionDiplomas from '@/components/Accordion.vue';
-    import pictureFrame from '@/components/Hobbies.vue'
+    import pictureFrame from '@/components/Hobbies.vue';
+    import contactMail from '@/components/Contact.vue';
 // @ is an alias to /src
     export default {
         name: 'HomeView',
@@ -28,6 +29,7 @@
         components: {
             accordionDiplomas,
             pictureFrame,
+            contactMail,
         },
         computed: {
             section() {
@@ -72,6 +74,7 @@
                     {
                         title: "contact",
                         icon: ['far', 'envelope'],
+                        component: 'contactMail',
                     },
                 ],
             }
