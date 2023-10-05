@@ -22,6 +22,7 @@
     import pictureFrame from '@/components/Hobbies.vue';
     import contactMail from '@/components/Contact.vue';
     import portfolioProject from '@/components/Portfolio.vue';
+    import skillsInfo from '@/components/Skills.vue'
 // @ is an alias to /src
     export default {
         name: 'HomeView',
@@ -32,6 +33,7 @@
             pictureFrame,
             contactMail,
             portfolioProject,
+            skillsInfo,
         },
         computed: {
             section() {
@@ -54,6 +56,7 @@
                     {
                         title: "competences",
                         icon: ['fas', 'list-check'],
+                        component: 'skillsInfo',
                     },
                     {
                         title: "diplomes",
