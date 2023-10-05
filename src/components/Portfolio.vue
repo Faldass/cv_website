@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4" v-for="(project, index) in projects" :key="index">
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-4" v-for="(project, index) in projects" :key="index">
                 <div class="card">
                     <img :src="project.image" class="card-img-top" alt="Project Image" />
                     <div class="card-body">
@@ -21,7 +21,7 @@
                                 Repo</a>
                         </li>
                         <li class="list-group-item" v-if="project.resource != ''">
-                            <a :href="project.resource" target="_blank" class="btn btn-secondary btn-block">Télécharger ressource</a>
+                            <a :href="`@/assets/${project.resource}`" :download="project.resource" target="_blank" class="btn btn-secondary btn-block">Télécharger ressource</a>
                         </li>
                     </ul>
                 </div>
@@ -58,13 +58,13 @@
             return {
                 projects: [
                     {
-                        title: "Projet 1",
-                        description: "Description du projet 1.",
-                        technologies: ["HTML", "CSS", "JavaScript"],
+                        title: "Nocturn",
+                        description: "Nocturn est une association événementielle toulousaine qui organise des évènements drum and bass. L'objectif était d'offrir au public cible, composé de personnes majeures passionnées de musique électronique, un moyen facile et convivial de rester informé sur les événements organisés par l'association, de réserver des places pour ces événements, et de suivre l'actualité de l'association. Le projet a été réalisé dans le cadre de ma formation développeur web. Vous pouvez télécharger le mémoire que j'ai pu rédiger pour l'obtention du dîplôme.",
+                        technologies: ["HTML", "CSS", "JavaScript", "bootstrap", "Vue.js", "PHP", "SQL"],
                         liveDemo: "",
-                        githubRepo: "https://github.com/yourusername/project1",
+                        githubRepo: "https://github.com/Faldass/nocturn",
                         image: require('@/assets/img/basketball.png'),
-                        resource: "",
+                        resource: "memoire-titreDevWeb.pdf",
                     },
                     {
                         title: "Projet 2",
@@ -101,7 +101,7 @@
 }
 
 .card-img-top {
-    height: 12rem;
+    height: 15rem;
 }
 
 .card:hover {
